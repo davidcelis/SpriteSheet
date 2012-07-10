@@ -7,13 +7,13 @@ Frameworks suchs as EaselJS.
 
 ## Usage
 
+![]( https://github.com/noxoc/SpriteSheet/raw/master/test/assets/example.gif )
+
     sheet = Sheet.new("example.gif")
     sheet.write_to("example_sheet.jpg")
 
-### Result
+will create:
 
-![]( https://github.com/noxoc/SpriteSheet/raw/master/test/assets/example.gif )
-will be transformed into
 ![]( https://github.com/noxoc/SpriteSheet/raw/master/test/assets/example_sheet.jpg )
 
 powered by [`RMagick`](https://github.com/rmagick/rmagick)
