@@ -24,5 +24,6 @@ powered by [`RMagick`](https://github.com/rmagick/rmagick)
 
 - make available as gem
 - `$ to_sheet filename.gif`
+- option to take meta-information (eg: delays) into account
 - create sheet from photoshop-file
 - create sheet from multiple files
