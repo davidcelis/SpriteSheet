@@ -7,6 +7,8 @@ Frameworks suchs as EaselJS.
 
 ## Usage
 
+Assuming we have this gif:
+
 ![]( https://github.com/noxoc/SpriteSheet/raw/master/test/assets/example.gif )
 
     sheet = Sheet.new("example.gif")
