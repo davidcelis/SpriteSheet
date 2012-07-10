@@ -1,0 +1,20 @@
+# SpriteSheet
+
+A small helper class to convert .gifs to sprites that can be used by other
+Frameworks suchs as EaselJS.
+
+    Work In Progress!
+
+## Usage
+
+      sheet = Sheet.new("example.gif")
+      sheet.write_to("example_sheet.jpg")
+
+powered by `RMagick`
+
+## Roadmap
+
+- make available as gem
+- `$ to_sheet filename.gif`
+- create sheet from photoshop-file
+- create sheet from multiple files
