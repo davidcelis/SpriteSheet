@@ -7,10 +7,10 @@ Frameworks suchs as EaselJS.
 
 ## Usage
 
-      sheet = Sheet.new("example.gif")
-      sheet.write_to("example_sheet.jpg")
+    sheet = Sheet.new("example.gif")
+    sheet.write_to("example_sheet.jpg")
 
-powered by `RMagick`
+powered by [`RMagick`](https://github.com/rmagick/rmagick)
 
 ## Roadmap
 
