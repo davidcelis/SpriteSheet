@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+require File.expand_path('../../lib/spritesheet.rb', __FILE__)
+require 'optparse'
+
+# TODO: write specs/tests for this?
+
+options = {}
+option_parser = OptionParser.new do |opts|
+  opts.banner = "Usage: spritesheet [options] sourcefile.gif output.jpg"
+  opts.on "-f", "--force", "overwrite output if already existing" do
+    options[:force] = true
+  end
+end
+
+option_parser.parse!
+
+if ARGV.count != 2
+  puts "please specify a source and output-file"
+else
+  source = ARGV[0]
+  output = ARGV[1]
+
+  # NOTE: Is this the best practice?
+  begin
+    raise "#{source} is not a valid file. Currently only gifs supported" unless SpriteSheet::Sheet.is_valid? source
+    raise  "#{output} already exists. Use -f to overwrite" if File.exists?(output) and !options[:forece]
+
+    puts "reading #{source}"
+    sheet = SpriteSheet::Sheet.new source
+    sheet.write_to output
+    puts "#{output} created"
+
+  rescue Exception => e
+    puts e.message
+    puts
+    puts option_parser.help
+  end
+end
+#  vim: set ts=2 sw=2 tw=80 cc=80 ft=ruby:
