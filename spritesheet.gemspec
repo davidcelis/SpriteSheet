@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{converts gifs to spritesheets that can be used by other libraries such as EaselJS}
   gem.homepage      = "https://github.com/noxoc/SpriteSheet"
 
-  gem.add_runtime_dependency 'RMagick'
+  gem.add_runtime_dependency 'rmagick'
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
