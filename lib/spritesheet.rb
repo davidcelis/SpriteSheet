@@ -1,4 +1,5 @@
 require 'RMagick'
+require 'spritesheet/version'
 
 module SpriteSheet
   class SpriteSheet::Sheet
