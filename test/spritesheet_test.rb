@@ -46,7 +46,7 @@ class SpriteSheetTest < Test::Unit::TestCase
   def test_write_image
     sheet = Sheet.new @sample_gif
     sheet.write_to @temp_sheet
-    assert File.exists?(@temp_sheet), "The should have been a File generated"
+    assert File.exists?(@temp_sheet), "There should have been a File generated"
     assert_equal Digest::MD5.hexdigest(File.read(@sample_sheet)),
       Digest::MD5.hexdigest(File.read(@temp_sheet))
   end
