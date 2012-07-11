@@ -2,17 +2,13 @@ require 'RMagick'
 require 'spritesheet/version'
 
 module SpriteSheet
-  class SpriteSheet::Sheet
-    attr_reader :frames
-    attr_reader :sprite
-
-    def initialize file
-      # only takes gif files
-      throw ArgumentError unless file =~ /\.gif$/
-      @frames = Magick::ImageList.new file
-      @sprite = @frames.append(false)
+  module ClassMethods
+    def is_valid? file
+      file =~ /\.gif$/
     end
+  end
 
+  module InstanceMethods
     def width
       @width ||= calculate_width
     end
@@ -33,5 +29,27 @@ module SpriteSheet
         sum + frame.columns
       }
     end
+  end
+
+  class Sheet
+    extend SpriteSheet::ClassMethods
+    include SpriteSheet::InstanceMethods
+
+    attr_reader :frames
+    attr_reader :sprite
+
+    def initialize file
+      # only takes gif files
+      raise SpriteSheet::ArgumentError unless SpriteSheet::Sheet.is_valid?( file )
+      @frames = Magick::ImageList.new file
+      @sprite = @frames.append(false)
+    end
+  end
+
+  # errors
+  class ArgumentError < ArgumentError
+  end
+
+  class FileExistsError < StandardError
   end
 end
