@@ -25,9 +25,7 @@ module SpriteSheet
     private
     # calculates the width of the sheet
     def calculate_width
-      @frames.inject(0) { |sum, frame|
-        sum + frame.columns
-      }
+      @frames.inject(0) { |sum, frame| sum + frame.columns }
     end
   end
 
@@ -40,9 +38,9 @@ module SpriteSheet
 
     def initialize file
       # only takes gif files
-      raise SpriteSheet::ArgumentError unless SpriteSheet::Sheet.is_valid?( file )
+      raise SpriteSheet::ArgumentError unless SpriteSheet::Sheet.is_valid? file
       @frames = Magick::ImageList.new file
-      @sprite = @frames.append(false)
+      @sprite = @frames.append false
     end
   end
 

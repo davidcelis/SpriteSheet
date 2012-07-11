@@ -23,7 +23,7 @@ class SpriteSheetTest < Test::Unit::TestCase
 
   def test_sheet_width
     sheet = SpriteSheet::Sheet.new @sample_gif
-    assert_equal ( 9*85 ), sheet.width
+    assert_equal (9 * 85), sheet.width
   end
 
   def test_height
@@ -51,8 +51,8 @@ class SpriteSheetTest < Test::Unit::TestCase
   end
 
   def test_is_valid_file?
-    assert SpriteSheet::Sheet.is_valid?( @sample_gif ), "sample gif should be valid"
-    assert !SpriteSheet::Sheet.is_valid?( 'foobar.jpg' ), "jpg is not valid"
+    assert SpriteSheet::Sheet.is_valid?(@sample_gif), "sample gif should be valid"
+    assert !SpriteSheet::Sheet.is_valid?('foobar.jpg'), "jpg is not valid"
   end
 
   def teardown

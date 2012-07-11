@@ -23,7 +23,7 @@ else
   # NOTE: Is this the best practice?
   begin
     raise "#{source} is not a valid file. Currently only gifs supported" unless SpriteSheet::Sheet.is_valid? source
-    raise  "#{output} already exists. Use -f to overwrite" if File.exists?(output) and !options[:forece]
+    raise "#{output} already exists. Use -f to overwrite" if File.exists?(output) && !options[:force]
 
     puts "reading #{source}"
     sheet = SpriteSheet::Sheet.new source
