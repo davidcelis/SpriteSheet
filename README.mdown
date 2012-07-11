@@ -5,25 +5,28 @@ Frameworks suchs as EaselJS.
 
     Work In Progress!
 
+## Installation
+
+    gem install spritesheet
+
 ## Usage
 
-Assuming we have this gif:
+Assuming we have this gif 'example.gif':
 
 ![]( https://github.com/noxoc/SpriteSheet/raw/master/test/assets/example.gif )
+
+in order to get this:
+
+![]( https://github.com/noxoc/SpriteSheet/raw/master/test/assets/example_sheet.jpg )
+
+You can either create them with ruby code:
 
     sheet = Sheet.new("example.gif")
     sheet.write_to("example_sheet.jpg")
 
-will create:
+or on the commandline
 
-![]( https://github.com/noxoc/SpriteSheet/raw/master/test/assets/example_sheet.jpg )
+    $ spritesheet example.gif example_sheet.jpg
 
 powered by [`RMagick`](https://github.com/rmagick/rmagick)
 
-## Roadmap
-
-- make available as gem
-- `$ to_sheet filename.gif`
-- option to take meta-information (eg: delays) into account
-- create sheet from photoshop-file
-- create sheet from multiple files
